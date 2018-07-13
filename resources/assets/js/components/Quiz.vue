@@ -3,7 +3,7 @@
         <div class="card-header text-center">
             <h3>{{ currentTerm }}</h3>
         </div>
-        <div class="card-body text-cener">
+        <div class="card-body text-center">
             {{ currentDef }}
         </div>
         <div class="card-footer py-0 bg-transparent">

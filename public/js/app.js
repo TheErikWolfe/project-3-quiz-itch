@@ -47642,7 +47642,7 @@ var render = function() {
       _c("h3", [_vm._v(_vm._s(_vm.currentTerm))])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "card-body text-cener" }, [
+    _c("div", { staticClass: "card-body text-center" }, [
       _vm._v("\n        " + _vm._s(_vm.currentDef) + "\n    ")
     ]),
     _vm._v(" "),
