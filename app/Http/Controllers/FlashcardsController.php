@@ -39,6 +39,9 @@ class FlashcardsController extends Controller
         $flashcard->creator_id = auth()->user()->id;
         $flashcard->save();
         $request->session()->flash('status', 'Flash Card Created!');
+
+        dd('$flashcard');
+
         return redirect()->route('flashcards.index');
     }
 
