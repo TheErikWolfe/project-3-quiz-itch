@@ -1,39 +1,46 @@
 <template>
     <div class="card">
-        <div class="card-header">
-
+        <div class="card-header text-center">
+            <h3>{{ currentTerm }}</h3>
         </div>
-        <div class="card-body">
-
+        <div class="card-body text-cener">
+            {{ currentDef }}
+        </div>
+        <div class="card-footer bg-transparent">
+            <div class="row">
+                <button class="col btn btn-sm float-left" v-on:click="nextCard(-1)"><i class="fas fa-arrow-left"></i></button>
+                <button class="col btn btn-sm float-right" v-on:click="nextCard(1)"><i class="fas fa-arrow-right"></i></button>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    export default {
+    export default 
+    {
         props: ['flashcardsData'],
-        data () {
+        data () 
+        {
             return {
-            searchString: '',
-            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                current: 0,  
+                currentTerm: "",
+                currentDef: ""       
             }
-        },      
+        },   
+
         mounted() {
+            this.currentTerm = this.flashcardsData[this.current].term;
+            this.currentDef = this.flashcardsData[this.current].definition;
+
         },
-        computed: {
-            filteredFlashcards: function() {
-                var flashcards_array = this.flashcardsData;
-                var search_string = this.searchString.toLowerCase();
-                if (!search_string) {
-                    return flashcards_array;
-                }
-                flashcards_array = flashcards_array.filter(function(item) {
-                    if(item.term.toLowerCase().indexOf(search_string) !== -1) {
-                        return item;
-                    }
-                });
-                return flashcards_array;
-            }
+
+        methods: {
+            nextCard: function(iteration) 
+            {
+                this.current = (this.current + iteration) % this.flashcardsData.length;
+                this.currentTerm = this.flashcardsData[this.current].term;
+                this.currentDef = this.flashcardsData[this.current].definition;
+            },
         }
     }
 </script>

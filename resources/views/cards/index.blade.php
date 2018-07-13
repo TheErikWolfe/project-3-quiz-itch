@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.card')
 
 @section('title')
     Add Flash Card
@@ -21,20 +21,19 @@
 	</script>
     
     <p><a id="toggleText" href="#" onclick="toggleNewFlashcardForm()">Hide New Flash Card Form</a></p>
-
-	<div id="newFlashcardForm" style="display: block" class="">
-		<form class="" method="post" action="/flashcards/">
-			@csrf
-			<div class="form-group">
-				<label for="term">Term</label>
-				<input type="text" class="form-control" name="flashcardTerm" id="term">
-			</div>
-			<div class="form-group">
-				<label for="definition">Definition</label>
-				<textarea class="form-control" id="definition" name="flashcardDefinition" rows="3"></textarea>
-			</div>
-			<button class="btn btn-primary" type="submit">Create</button>
-		</form>
+	<div class="card">
+			<form class="" method="post" action="/flashcards/">
+				@csrf
+				<div class="form-group card-header">
+					<label for="term">Term</label>
+					<input type="text" class="form-control" name="flashcardTerm" id="term">
+				</div>
+				<div class="form-group card-body">
+					<label for="definition">Definition</label>
+					<textarea class="form-control" id="definition" name="flashcardDefinition" rows="3"></textarea>
+				</div>
+				<button class="btn btn-primary" type="submit">Create</button>
+			</form>
 	</div>
 
     <display-flashcards :flashcards-data='{{ $flashcards->toJSON() }}'></display-flashcards>

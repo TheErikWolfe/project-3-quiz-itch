@@ -22,7 +22,6 @@ class FlashcardsController extends Controller
     public function show()
     {
         $flashcards = \App\Flashcard::orderBy('term')->where('creator_id', '=', auth()->user()->id)->get();
-
         return view('cards.show', compact('flashcards'));
 
     }
