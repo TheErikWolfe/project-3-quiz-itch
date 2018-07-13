@@ -7,7 +7,7 @@
 @section('content')
 
 	@if ($errors->any())
-		<div class="alert alert-danger">
+		<div class="alert alert-danger flash-card-width mb-3">
 			<ul class="mb-0">
 				@foreach ($errors->all() as $error)
 					<li>{{ $error }}</li>
@@ -17,7 +17,7 @@
 	@endif
 
 	@if (session('status'))
-		<div class="alert alert-success" role="alert">
+		<div class="alert alert-success flash-card-width mb-3" role="alert">
 			{{ session('status') }}
 		</div>
 	@endif
