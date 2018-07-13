@@ -13,7 +13,10 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-image: url("http://www.wallpapers4u.org/wp-content/uploads/notebook_texture_fields_lines_stripes_75767_1920x1080.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% auto;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
