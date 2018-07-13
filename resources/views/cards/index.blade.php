@@ -20,9 +20,9 @@
 		}
 	</script>
     
-    <p><a id="toggleText" href="#" onclick="toggleNewFlashcardForm()">Show New Flash Card Form</a></p>
+    <p><a id="toggleText" href="#" onclick="toggleNewFlashcardForm()">Hide New Flash Card Form</a></p>
 
-	<div id="newFlashcardForm" style="display: none" class="">
+	<div id="newFlashcardForm" style="display: block" class="">
 		<form class="" method="post" action="/flashcards/">
 			@csrf
 			<div class="form-group">

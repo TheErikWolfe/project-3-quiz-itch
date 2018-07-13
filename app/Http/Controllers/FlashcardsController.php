@@ -14,9 +14,17 @@ class FlashcardsController extends Controller
 
     public function index() 
     {
-        $flashcards = \App\Flashcard::orderBy('term')->get();
+        $flashcards = \App\Flashcard::orderBy('term')->where('creator_id', '=', auth()->user()->id)->get();
 
         return view('cards.index', compact('flashcards'));
+    }
+
+    public function show()
+    {
+        $flashcards = \App\Flashcard::orderBy('term')->where('creator_id', '=', auth()->user()->id)->get();
+
+        return view('cards.show', compact('flashcards'));
+
     }
 
     public function store(Request $request)

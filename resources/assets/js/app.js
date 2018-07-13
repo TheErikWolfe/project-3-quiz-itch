@@ -17,7 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('display-flashcards', require('./components/DisplayFlashcards.vue'));
-
+Vue.component('quiz', require('./components/Quiz.vue'));
 
 
 const app = new Vue({
