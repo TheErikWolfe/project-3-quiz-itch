@@ -6,34 +6,20 @@
 
 @section('content')
 
-    <script>
-		function toggleNewFlashcardForm() {
-		    var x = document.getElementById("newFlashcardForm");
-		    var t = document.getElementById("toggleText");
-		    if (x.style.display === "none") {
-		        x.style.display = "block";
-		        t.innerHTML = "Hide New Flash Card Form";
-		    } else {
-		        x.style.display = "none";
-		        t.innerHTML = "Show New Flash Card Form";
-		    }
-		}
-	</script>
-    
-    <p><a id="toggleText" href="#" onclick="toggleNewFlashcardForm()">Hide New Flash Card Form</a></p>
-	<div class="card">
-			<form class="" method="post" action="/flashcards/">
-				@csrf
-				<div class="form-group card-header">
-					<label for="term">Term</label>
-					<input type="text" class="form-control" name="flashcardTerm" id="term">
-				</div>
-				<div class="form-group card-body">
-					<label for="definition">Definition</label>
-					<textarea class="form-control" id="definition" name="flashcardDefinition" rows="3"></textarea>
-				</div>
-				<button class="btn btn-primary" type="submit">Create</button>
-			</form>
+    <div class="card p-0">
+		<div class="card-header">
+			<h3 class="m-0 text-center">Add New Flash Card</h3>
+		</div>
+		<form class="" method="post" action="/flashcards/">
+			@csrf
+			<div class="form-group p-0 card-header">
+				<input type="text" class="form-control" name="flashcardTerm" id="term" placeholder="Term">
+			</div>
+			<div class="form-group m-0 p-0 card-body">
+				<textarea class="form-control" id="definition" placeholder="Definition" name="flashcardDefinition" rows="3"></textarea>
+			</div>
+		</form>
+		<button class="btn rounded-0 btn-primary" type="submit">Create</button>
 	</div>
 
     <display-flashcards :flashcards-data='{{ $flashcards->toJSON() }}'></display-flashcards>
