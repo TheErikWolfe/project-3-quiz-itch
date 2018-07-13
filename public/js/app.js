@@ -47412,7 +47412,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("div", { staticClass: "card p-0 mt-3" }, [
+      _c("div", { staticClass: "card flash-card-width p-0 mt-3" }, [
         _c("div", { staticClass: "form-group card-body p-0 m-0" }, [
           _c("input", {
             directives: [
@@ -47443,7 +47443,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _vm._l(_vm.filteredFlashcards, function(flashcard) {
-        return _c("div", { staticClass: "card my-3" }, [
+        return _c("div", { staticClass: "card flash-card-width my-3" }, [
           _c("div", { staticClass: "card-header bg-transparent" }, [
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col" }, [
@@ -47637,7 +47637,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card" }, [
+  return _c("div", { staticClass: "card flash-card-width" }, [
     _c("div", { staticClass: "card-header text-center" }, [
       _c("h3", [_vm._v(_vm._s(_vm.currentTerm))])
     ]),

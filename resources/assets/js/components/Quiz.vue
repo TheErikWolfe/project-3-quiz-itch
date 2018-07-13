@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card flash-card-width">
         <div class="card-header text-center">
             <h3>{{ currentTerm }}</h3>
         </div>

@@ -1,13 +1,13 @@
 
 <template>
     <div>
-        <div class="card p-0 mt-3">
+        <div class="card flash-card-width p-0 mt-3">
         <div class="form-group card-body p-0 m-0">
             <input id="searchBox" class="form-control m-0 newFCForm" type="text" v-model="searchString" placeholder="Search For Terms" />
         </div>
         </div>
 
-        <div class="card my-3" v-for="flashcard in filteredFlashcards">
+        <div class="card flash-card-width my-3" v-for="flashcard in filteredFlashcards">
             <div class="card-header bg-transparent">
                 <div class="row">
 

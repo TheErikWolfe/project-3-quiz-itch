@@ -41,6 +41,9 @@ h1, h2, h3, h4, h5 {
 .card{
   @extend .rounded-0;
   @extend .shadow;
+}
+
+.flash-card-width {
   width: 65%;
   margin: auto;
 }

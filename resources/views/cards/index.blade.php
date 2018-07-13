@@ -23,7 +23,7 @@
 	@endif
 
 
-    <div class="card p-0">
+    <div class="card flash-card-width p-0">
 		<div class="card-header">
 			<h3 class="m-0 text-center">Add New Flash Card</h3>
 		</div>
