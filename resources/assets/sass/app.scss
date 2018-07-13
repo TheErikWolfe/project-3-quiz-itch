@@ -8,6 +8,17 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-image: url("http://www.wallpapers4u.org/wp-content/uploads/notebook_texture_fields_lines_stripes_75767_1920x1080.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% auto;
+}
+
+.bg-img {
+  background-color: url("https://www.femplate.com/wp-content/uploads/2017/10/note-cards-template-note-cards-template-speech-note-cards-template-research-note-cards-template-note-cards-template-microsoft.png") !important;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -18,11 +29,20 @@
   @extend .shadow;
 }
 
-input, textarea {
+.newFCForm {
   @extend .rounded-0;
   width: 100%;
   height: 100%;
   @extend .m-0;
   border:none !important;
+  box-shadow: none;
+}
+
+button {
+  @extend .rounded-0;
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
   box-shadow: none;
 }

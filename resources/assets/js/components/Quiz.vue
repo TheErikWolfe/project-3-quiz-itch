@@ -6,10 +6,10 @@
         <div class="card-body text-cener">
             {{ currentDef }}
         </div>
-        <div class="card-footer bg-transparent">
+        <div class="card-footer py-0 bg-transparent">
             <div class="row">
-                <button class="col btn btn-sm float-left" v-on:click="nextCard(-1)"><i class="fas fa-arrow-left"></i></button>
-                <button class="col btn btn-sm float-right" v-on:click="nextCard(1)"><i class="fas fa-arrow-right"></i></button>
+                <button class="bg-transparent col btn btn-sm float-left" v-on:click="nextCard(-1)"><i class="float-left fas fa-arrow-left"></i></button>
+                <button class="bg-transparent col btn btn-sm float-right" v-on:click="nextCard(1)"><i class=" float-right fas fa-arrow-right"></i></button>
             </div>
         </div>
     </div>
@@ -37,7 +37,14 @@
         methods: {
             nextCard: function(iteration) 
             {
-                this.current = (this.current + iteration) % this.flashcardsData.length;
+                if(this.current + iteration < 0)
+                {
+                    this.current = this.flashcardsData.length - 1;
+                }
+                else
+                {
+                    this.current = (this.current + iteration) % this.flashcardsData.length;
+                }
                 this.currentTerm = this.flashcardsData[this.current].term;
                 this.currentDef = this.flashcardsData[this.current].definition;
             },

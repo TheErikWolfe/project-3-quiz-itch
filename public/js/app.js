@@ -47372,6 +47372,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['flashcardsData'],
@@ -47408,112 +47409,107 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        { staticClass: "font-weight-bold", attrs: { for: "searchBox" } },
-        [_vm._v("Filter Terms:")]
-      ),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.searchString,
-            expression: "searchString"
-          }
-        ],
-        staticClass: "form-control",
-        attrs: { id: "searchBox", type: "text", placeholder: "Enter Term" },
-        domProps: { value: _vm.searchString },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "card p-0 mt-3" }, [
+        _c("div", { staticClass: "form-group card-body p-0 m-0" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.searchString,
+                expression: "searchString"
+              }
+            ],
+            staticClass: "form-control m-0 newFCForm",
+            attrs: {
+              id: "searchBox",
+              type: "text",
+              placeholder: "Search For Terms"
+            },
+            domProps: { value: _vm.searchString },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.searchString = $event.target.value
+              }
             }
-            _vm.searchString = $event.target.value
-          }
-        }
-      })
-    ]),
-    _vm._v(" "),
-    _c("table", { staticClass: "table" }, [
-      _vm._m(0),
+          })
+        ])
+      ]),
       _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.filteredFlashcards, function(flashcard) {
-          return _c("tr", [
-            _c("td", [_vm._v(_vm._s(flashcard.term))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(flashcard.definition))]),
-            _vm._v(" "),
-            _c("td", [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-xs-auto" }, [
-                  _c("button", { staticClass: "btn btn-sm bg-transparent" }, [
+      _vm._l(_vm.filteredFlashcards, function(flashcard) {
+        return _c("div", { staticClass: "card my-3" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col" }, [
+                _c("h4", { staticClass: "m-0" }, [
+                  _vm._v(_vm._s(flashcard.term))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col" }, [
+                _c("div", { staticClass: "row float-right" }, [
+                  _c("div", { staticClass: "col-xs-auto" }, [
+                    _c("button", { staticClass: "btn btn-sm bg-transparent" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "/flashcards/" + flashcard.id + "/edit"
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-edit text-primary" })]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-xs-auto" }, [
                     _c(
-                      "a",
+                      "form",
                       {
-                        attrs: { href: "/flashcards/" + flashcard.id + "/edit" }
+                        attrs: {
+                          method: "post",
+                          action: "/flashcards/" + flashcard.id
+                        }
                       },
-                      [_c("i", { staticClass: "fas fa-edit text-primary" })]
+                      [
+                        _c("input", {
+                          attrs: { type: "hidden", name: "_token" },
+                          domProps: { value: _vm.csrf }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "hidden",
+                            name: "_method",
+                            value: "DELETE"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm._m(0, true)
+                      ]
                     )
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-xs-auto" }, [
-                  _c(
-                    "form",
-                    {
-                      attrs: {
-                        method: "post",
-                        action: "/flashcards/" + flashcard.id
-                      }
-                    },
-                    [
-                      _c("input", {
-                        attrs: { type: "hidden", name: "_token" },
-                        domProps: { value: _vm.csrf }
-                      }),
-                      _vm._v(" "),
-                      _c("input", {
-                        attrs: {
-                          type: "hidden",
-                          name: "_method",
-                          value: "DELETE"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _vm._m(1, true)
-                    ]
-                  )
                 ])
               ])
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("p", [_vm._v(_vm._s(flashcard.definition))])
           ])
-        })
-      )
-    ])
-  ])
+        ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Term")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Definition")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Actions")])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -47622,7 +47618,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         nextCard: function nextCard(iteration) {
-            this.current = (this.current + iteration) % this.flashcardsData.length;
+            if (this.current + iteration < 0) {
+                this.current = this.flashcardsData.length - 1;
+            } else {
+                this.current = (this.current + iteration) % this.flashcardsData.length;
+            }
             this.currentTerm = this.flashcardsData[this.current].term;
             this.currentDef = this.flashcardsData[this.current].definition;
         }
@@ -47646,32 +47646,32 @@ var render = function() {
       _vm._v("\n        " + _vm._s(_vm.currentDef) + "\n    ")
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "card-footer bg-transparent" }, [
+    _c("div", { staticClass: "card-footer py-0 bg-transparent" }, [
       _c("div", { staticClass: "row" }, [
         _c(
           "button",
           {
-            staticClass: "col btn btn-sm float-left",
+            staticClass: "bg-transparent col btn btn-sm float-left",
             on: {
               click: function($event) {
                 _vm.nextCard(-1)
               }
             }
           },
-          [_c("i", { staticClass: "fas fa-arrow-left" })]
+          [_c("i", { staticClass: "float-left fas fa-arrow-left" })]
         ),
         _vm._v(" "),
         _c(
           "button",
           {
-            staticClass: "col btn btn-sm float-right",
+            staticClass: "bg-transparent col btn btn-sm float-right",
             on: {
               click: function($event) {
                 _vm.nextCard(1)
               }
             }
           },
-          [_c("i", { staticClass: "fas fa-arrow-right" })]
+          [_c("i", { staticClass: " float-right fas fa-arrow-right" })]
         )
       ])
     ])

@@ -1,40 +1,41 @@
 
 <template>
     <div>
-        <div class="form-group">
-            <label for="searchBox" class="font-weight-bold">Filter Terms:</label>
-            <input id="searchBox" class="form-control" type="text" v-model="searchString" placeholder="Enter Term" />
+        <div class="card p-0 mt-3">
+        <div class="form-group card-body p-0 m-0">
+            <input id="searchBox" class="form-control m-0 newFCForm" type="text" v-model="searchString" placeholder="Search For Terms" />
+        </div>
         </div>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Term</th>
-                    <th>Definition</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="flashcard in filteredFlashcards">
-                    <td>{{ flashcard.term }}</td>
-                    <td>{{ flashcard.definition }}</td>
-                    <td>
-                        <div class="row">
-                            <div class="col-xs-auto">
-                                <button class="btn btn-sm bg-transparent"><a :href="'/flashcards/' + flashcard.id + '/edit'"><i class="fas fa-edit text-primary"></i></a></button>
-                            </div>
-                            <div class="col-xs-auto">
-                                <form method="post" :action="'/flashcards/' + flashcard.id">
-                                    <input type="hidden" name="_token" :value="csrf">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button class="btn btn-sm bg-transparent" type="submit"><i class="fas fa-times text-danger"></i></button>
-                                </form>
-                            </div>
+        <div class="card my-3" v-for="flashcard in filteredFlashcards">
+            <div class="card-header">
+                <div class="row">
+
+                <div class="col">
+                    <h4 class="m-0">{{ flashcard.term }}</h4>
+                </div>
+
+                <div class="col">
+                    <div class="row float-right">
+                        <div class="col-xs-auto">
+                            <button class="btn btn-sm bg-transparent"><a :href="'/flashcards/' + flashcard.id + '/edit'"><i class="fas fa-edit text-primary"></i></a></button>
                         </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        <div class="col-xs-auto">
+                            <form method="post" :action="'/flashcards/' + flashcard.id">
+                                <input type="hidden" name="_token" :value="csrf">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-sm bg-transparent" type="submit"><i class="fas fa-times text-danger"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            <div class="card-body">
+                <p>{{ flashcard.definition }}</p>
+            </div>
+        </div>
     </div>
 </template>
 
