@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function flashcards_created ()
+    {
+        return $this->hasMany('App\Flashcard', 'creator_id');
+    }
 }

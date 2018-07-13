@@ -13892,6 +13892,7 @@ window.Vue = __webpack_require__(36);
  */
 
 Vue.component('example-component', __webpack_require__(39));
+Vue.component('display-flashcards', __webpack_require__(48));
 
 var app = new Vue({
   el: '#app'
@@ -47399,6 +47400,265 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(49)
+/* template */
+var __vue_template__ = __webpack_require__(50)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/DisplayFlashcards.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3d74d42e", Component.options)
+  } else {
+    hotAPI.reload("data-v-3d74d42e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['flashcardsData'],
+    data: function data() {
+        return {
+            searchString: '',
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        };
+    },
+    mounted: function mounted() {},
+
+    computed: {
+        filteredFlashcards: function filteredFlashcards() {
+            var flashcards_array = this.flashcardsData;
+            var search_string = this.searchString.toLowerCase();
+            if (!search_string) {
+                return flashcards_array;
+            }
+            flashcards_array = flashcards_array.filter(function (item) {
+                if (item.name.toLowerCase().indexOf(search_string) !== -1) {
+                    return item;
+                }
+            });
+            return flashcards_array;
+        }
+    }
+});
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "form-group" }, [
+      _c(
+        "label",
+        { staticClass: "font-weight-bold", attrs: { for: "searchBox" } },
+        [_vm._v("Filter Flash Cards:")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.searchString,
+            expression: "searchString"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { id: "searchBox", type: "text", placeholder: "Enter term" },
+        domProps: { value: _vm.searchString },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.searchString = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("table", { staticClass: "table" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        _vm._l(_vm.filteredFlashcards, function(flashcard) {
+          return _c("tr", [
+            _c("td", [_vm._v(_vm._s(flashcard.term))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(flashcard.definition))]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-xs-auto" }, [
+                  _c("button", { staticClass: "btn btn-sm" }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "/flashcards/" + flashcard.id + "/edit" }
+                      },
+                      [_c("i", { staticClass: "fas fa-edit text-primary" })]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xs-auto" }, [
+                  _c(
+                    "form",
+                    {
+                      attrs: {
+                        method: "post",
+                        action: "/flashcards/" + flashcard.id
+                      }
+                    },
+                    [
+                      _c("input", {
+                        attrs: { type: "hidden", name: "_token" },
+                        domProps: { value: _vm.csrf }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: {
+                          type: "hidden",
+                          name: "_method",
+                          value: "DELETE"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(1, true)
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        })
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Term")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Definition")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Actions")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "btn btn-sm", attrs: { type: "submit" } },
+      [_c("i", { staticClass: "fas fa-times text-danger" })]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3d74d42e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
