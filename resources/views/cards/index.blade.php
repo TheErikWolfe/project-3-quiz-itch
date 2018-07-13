@@ -27,7 +27,7 @@
 		<div class="card-header">
 			<h3 class="m-0 text-center">Add New Flash Card</h3>
 		</div>
-		<form class="" method="post" action="/flashcards/">
+		<form class="" method="post" action="/flashcards">
 			@csrf
 			<div class="form-group p-0 card-header">
 				<label style="display:none;" for="term"></label>
