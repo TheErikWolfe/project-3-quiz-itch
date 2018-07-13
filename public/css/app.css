@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/*!
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@import url(https://fonts.googleapis.com/css?family=Fredericka+the+Great);/*!
  * Bootstrap v4.1.2 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -7032,7 +7032,8 @@ button.bg-dark:focus {
   border-left: 1px solid #dee2e6 !important;
 }
 
-.border-0 {
+.border-0,
+.btn-primary {
   border: 0 !important;
 }
 
@@ -10478,17 +10479,36 @@ body {
   background-image: url("http://www.wallpapers4u.org/wp-content/uploads/notebook_texture_fields_lines_stripes_75767_1920x1080.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% auto;
+  background-size: 100% 100%;
 }
 
-.bg-img {
-  background-color: url("https://www.femplate.com/wp-content/uploads/2017/10/note-cards-template-note-cards-template-speech-note-cards-template-research-note-cards-template-note-cards-template-microsoft.png") !important;
+a {
+  color: #5672AD;
+}
+
+.btn-primary {
+  background-color: #5672C8;
 }
 
 .navbar-laravel {
-  background-color: #fff;
+  font-family: 'Fredericka the Great', sans-serif;
+  color: #fff !important;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background-color: #5672AD;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Fredericka the Great', sans-serif;
+}
+
+.card {
+  width: 65%;
+  margin: auto;
 }
 
 .newFCForm {

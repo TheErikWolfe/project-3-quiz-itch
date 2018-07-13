@@ -75,13 +75,13 @@
 
         <main class="py-4">
             <div class="container">
-                <div class="card bg-img">
-                    <div class="card-header bg-transparent">
+                <div class="card">
+                    <div class="card-header">
                         <div class="text-center">
                             @yield('title')
                         </div>
                     </div>
-                    <div class="card-body bg-transparent">
+                    <div class="card-body">
                         @yield('content')
                     </div>
                 </div>

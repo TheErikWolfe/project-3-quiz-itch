@@ -8,7 +8,7 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -17,8 +17,8 @@
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: 100% auto;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
+                color: #5650AD;
+                font-family: 'Fredericka the Great', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
@@ -53,7 +53,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #5650AD;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;

@@ -8,7 +8,7 @@
         </div>
 
         <div class="card my-3" v-for="flashcard in filteredFlashcards">
-            <div class="card-header">
+            <div class="card-header bg-transparent">
                 <div class="row">
 
                 <div class="col">

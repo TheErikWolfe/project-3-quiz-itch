@@ -47444,7 +47444,7 @@ var render = function() {
       _vm._v(" "),
       _vm._l(_vm.filteredFlashcards, function(flashcard) {
         return _c("div", { staticClass: "card my-3" }, [
-          _c("div", { staticClass: "card-header" }, [
+          _c("div", { staticClass: "card-header bg-transparent" }, [
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col" }, [
                 _c("h4", { staticClass: "m-0" }, [
