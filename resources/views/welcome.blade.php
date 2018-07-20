@@ -14,9 +14,11 @@
         <style>
             html, body {
                 background-image: url("http://www.wallpapers4u.org/wp-content/uploads/notebook_texture_fields_lines_stripes_75767_1920x1080.jpg");
+                height: 100%;
                 background-repeat: no-repeat;
+                background-position: center;
                 background-attachment: fixed;
-                background-size: 100% auto;
+                background-size: cover;
                 color: #5650AD;
                 font-family: 'Fredericka the Great', sans-serif;
                 font-weight: 100;

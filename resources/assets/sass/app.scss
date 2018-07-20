@@ -11,9 +11,11 @@
 
 body {
   background-image: url("http://www.wallpapers4u.org/wp-content/uploads/notebook_texture_fields_lines_stripes_75767_1920x1080.jpg");
+  height: 100%;
   background-repeat: no-repeat;
+  background-position: center;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 a {
@@ -33,7 +35,7 @@ a {
   background-color: #5672AD;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2 {
   font-family: 'Fredericka the Great', sans-serif;
   
 }
@@ -41,6 +43,8 @@ h1, h2, h3, h4, h5 {
 .card{
   @extend .rounded-0;
   @extend .shadow;
+  min-width: 400px;
+  min-height:200px;
 }
 
 .flash-card-width {

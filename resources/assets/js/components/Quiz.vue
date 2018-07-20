@@ -1,10 +1,9 @@
 <template>
     <div class="card flash-card-width">
-        <div class="card-header text-center">
-            <h3>{{ currentTerm }}</h3>
-        </div>
-        <div class="card-body text-center">
-            {{ currentDef }}
+        <img class="card-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAACuCAMAAAClZfCTAAAAKlBMVEX////7/P/y8v+ZnP95fP/Nzv/Awv92ev+Hiv+mqP/j5P/a2/+xs///gIAlaR6pAAAAk0lEQVR4nO3buQ0EQQwDQd3/55/uhUDI4hpVKbAdDTAzAAAAAAAAAMAh/QjaCwEAAMDGl2A+BO2IAQAAYONB0F4IAAAANt4E8yJoRwwAAAAbT4I5EbQjBgAAgI32D4vjay8EAAAAG3eCuRG0IwYAAICNK0F7IQAAANg4E8yFoB0xAAAAbLTv6OPzXhS1IwYAAICFP38+dK9SmODpAAAAAElFTkSuQmCC" alt="Card image">
+        <div class="card-img-overlay text-center">
+            <h1>{{ currentTerm }}</h1>
+            <h3 class="mt-5">{{ currentDef }}</h3>
         </div>
         <div class="card-footer py-0 bg-transparent">
             <div class="row">
